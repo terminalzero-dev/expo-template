@@ -1,0 +1,10 @@
+{
+  "oxc.fmt.experimental": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.oxc": "explicit"
+  },
+  "[javascript][javascriptreact][typescript][typescriptreact][json][jsonc][css]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  }
+}

@@ -1,0 +1,18 @@
+# https://lefthook.dev — run oxc lint + format on staged files before commit.
+# NODE_OPTIONS silences MODULE_TYPELESS_PACKAGE_JSON when loading the TS configs
+# (this Expo app has no "type" field in package.json).
+pre-commit:
+  parallel: false
+  jobs:
+    - name: oxlint
+      glob: "*.{js,jsx,ts,tsx,mjs,cjs}"
+      run: bunx oxlint --fix {staged_files}
+      stage_fixed: true
+      env:
+        NODE_OPTIONS: "--disable-warning=MODULE_TYPELESS_PACKAGE_JSON"
+    - name: oxfmt
+      glob: "*.{js,jsx,ts,tsx,mjs,cjs,json,jsonc,css}"
+      run: bunx oxfmt {staged_files}
+      stage_fixed: true
+      env:
+        NODE_OPTIONS: "--disable-warning=MODULE_TYPELESS_PACKAGE_JSON"
