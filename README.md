@@ -40,18 +40,27 @@ Runs on **iOS**, **Android**, and the **web** from a single codebase.
 
 ## Quick start
 
-Create a new project from this template:
+Create a new project from this template with `create-expo-app` (scaffolds, installs deps, and inits git):
 
 ```sh
-# GitHub: click "Use this template", or scaffold with degit
-bunx degit terminalzero-dev/expo-template my-app
+bunx create-expo-app my-app --template https://github.com/terminalzero-dev/expo-template
 cd my-app
-
-bun install
 bun start
 ```
 
 Then press <kbd>i</kbd> for iOS, <kbd>a</kbd> for Android, or <kbd>w</kbd> for web in the Expo CLI.
+
+Other options:
+
+```sh
+# A specific branch / tag / commit
+bunx create-expo-app my-app --template https://github.com/terminalzero-dev/expo-template/tree/main
+
+# Or just copy the files (no scaffolding), then install
+bunx degit terminalzero-dev/expo-template my-app && cd my-app && bun install
+```
+
+You can also click **"Use this template"** on GitHub to create your own repository from it.
 
 ## Scripts
 
