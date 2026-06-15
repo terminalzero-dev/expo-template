@@ -66,8 +66,8 @@ Then press <kbd>i</kbd> for iOS, <kbd>a</kbd> for Android, or <kbd>w</kbd> for w
 | `bun run lint:fix`      | Lint and auto-fix with oxlint                          |
 | `bun run format`        | Format with oxfmt                                      |
 | `bun run format:check`  | Check formatting without writing                       |
-| `bun run typecheck`     | Type-check with `tsc --noEmit`                         |
-| `bun run check`         | Run typecheck + lint + format check (use in CI)        |
+| `bun run typecheck`     | Type-aware lint + type-check via oxlint                |
+| `bun run check`         | Run typecheck + format check (use in CI)               |
 | `bun run reset-project` | Move the example code aside and start from a blank app |
 
 ## Project structure

@@ -67,6 +67,7 @@
     "lefthook": "^2.1.9",
     "oxfmt": "^0.54.0",
     "oxlint": "^1.69.0",
+    "oxlint-tsgolint": "^0.23.0",
     "taze": "^19.14.1",
     "typescript": "~6.0.3"
   },
@@ -80,8 +81,8 @@
     "lint:fix": "NODE_OPTIONS=--disable-warning=MODULE_TYPELESS_PACKAGE_JSON oxlint --fix",
     "format": "NODE_OPTIONS=--disable-warning=MODULE_TYPELESS_PACKAGE_JSON oxfmt",
     "format:check": "NODE_OPTIONS=--disable-warning=MODULE_TYPELESS_PACKAGE_JSON oxfmt --check",
-    "typecheck": "tsc --noEmit",
-    "check": "bun run typecheck && bun run lint && bun run format:check",
+    "typecheck": "NODE_OPTIONS=--disable-warning=MODULE_TYPELESS_PACKAGE_JSON oxlint --type-aware --type-check",
+    "check": "bun run typecheck && bun run format:check",
     "reset-project": "node ./scripts/reset-project.js",
     "up:deps": "taze -I major",
     "prepare": "lefthook install"

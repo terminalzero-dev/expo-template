@@ -17,4 +17,5 @@ Read the exact versioned docs at https://docs.expo.dev/versions/v56.0.0/ before 
 - Lint & format with **oxc** only — `bun run lint` / `bun run format`. Do **not** add ESLint or Prettier. Rules live in `oxlint.config.ts` and `oxfmt.config.ts`.
 - Application code goes in `src/`; only screens and layout files go in `src/app/`.
 - Read design tokens (`Colors`, `Spacing`, `Fonts`) from `src/constants/theme.ts`; prefer `ThemedText` / `ThemedView` and `useTheme()` over hard-coded colors.
-- Before finishing, run `bun run check` (typecheck + lint + format check).
+- Type checking is done by oxlint's type-aware mode (`bun run typecheck` → `oxlint --type-aware --type-check`), not `tsc`. It needs the `oxlint-tsgolint` dev dependency.
+- Before finishing, run `bun run check` (type-check + format check).
